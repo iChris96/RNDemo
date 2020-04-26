@@ -1,19 +1,24 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import * as React from "react";
+import { Text, View, StyleSheet } from "react-native";
+import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+// You can import from local files
+import LoginScreen from "./app/screens/LoginScreen";
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: "red",
+    accent: "yellow",
+  },
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Nice</Text>
-    </View>
+    <PaperProvider theme={theme}>
+      <LoginScreen />
+    </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
