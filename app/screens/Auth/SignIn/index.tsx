@@ -7,12 +7,14 @@ import {
   Platform,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import CustomImput from "../components/CustomImput";
+import CustomImput from "../../../components/CustomImput";
+import { Button } from "react-native-paper";
+import Colors from "../../../../assets/Colors/Colors";
 
-const lightColor = "#9999ff";
-const darkColor = "#6600ff";
+const lightColor = Colors.backGroundColors.lightColor;
+const darkColor = Colors.backGroundColors.darkColor;
 
-export default () => {
+export default ({ navigation }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -43,6 +45,14 @@ export default () => {
               setValue={setPassword}
               backgroundColor={lightColor}
             />
+
+            <Text
+              onPress={() => {
+                navigation.navigate("Register");
+              }}
+            >
+              SignUp!
+            </Text>
           </View>
         </View>
       </KeyboardAvoidingView>
