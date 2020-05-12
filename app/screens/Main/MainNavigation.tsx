@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./Home";
 import SettingsScreen from "./Settings";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import Colors from "../../../assets/Colors/Colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +29,7 @@ export default function App({ onSignOut }: any) {
         },
       })}
       tabBarOptions={{
-        activeTintColor: "tomato",
+        activeTintColor: Colors.primaryColor,
         inactiveTintColor: "gray",
       }}
     >
