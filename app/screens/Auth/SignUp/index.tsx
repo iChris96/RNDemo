@@ -23,7 +23,7 @@ export default ({ navigation }: any) => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
         <View style={styles.content}>
-          <Text style={styles.text}>Weather App</Text>
+          <Text style={styles.headerText}>Weather App</Text>
 
           <View style={styles.inputsContainer}>
             <CustomImput

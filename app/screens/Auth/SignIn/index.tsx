@@ -11,11 +11,12 @@ import CustomImput from "../../../components/CustomImput";
 import { Button } from "react-native-paper";
 import Colors from "../../../../assets/Colors/Colors";
 import GlobalStyles from "../../../../assets/Styles/Styles";
+import { styles } from "./styles";
 
 const lightColor = Colors.backGroundColors.lightColor;
 const darkColor = Colors.backGroundColors.darkColor;
 
-export default ({ navigation }: any) => {
+export default ({ navigation, onLogin }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -51,7 +52,9 @@ export default ({ navigation }: any) => {
 
             <Button
               mode="contained"
-              onPress={() => console.log("Pressed")}
+              onPress={() => {
+                onLogin();
+              }}
               style={GlobalStyles.submitButton}
               labelStyle={GlobalStyles.submitButtonLabel}
               contentStyle={GlobalStyles.submitButtonContent}
@@ -74,33 +77,3 @@ export default ({ navigation }: any) => {
     </LinearGradient>
   );
 };
-
-const styles = StyleSheet.create({
-  gradient: {
-    flex: 1,
-  },
-  content: {
-    padding: 16,
-    paddingTop: "40%",
-    flex: 1,
-    flexDirection: "column",
-    //backgroundColor: "red",
-  },
-  inputsContainer: {
-    flex: 1,
-    justifyContent: "center",
-    //backgroundColor: "yellow",
-  },
-  textInput: {
-    marginVertical: 5,
-  },
-  scrollView: {
-    //backgroundColor: "blue",
-  },
-  text: {
-    fontSize: 46,
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-});

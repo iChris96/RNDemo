@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./app/screens/Auth/SignIn";
 import RegisterScreen from "./app/screens/Auth/SignUp";
-import HomeScreen from "./app/screens/Main/Home";
+import MainNavigation from "./app/screens/Main/MainNavigation";
 
 const theme = {
   ...DefaultTheme,
@@ -20,6 +20,9 @@ export default function App() {
   const Stack = createStackNavigator();
   const [isSignIn, setIsSignIn] = useState(false);
 
+  const onLogin = () => setIsSignIn(true);
+  const onSignOut = () => setIsSignIn(false);
+
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer>
@@ -30,11 +33,15 @@ export default function App() {
         >
           {isSignIn ? (
             <>
-              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Home">
+                {(props) => <MainNavigation {...props} onSignOut={onSignOut} />}
+              </Stack.Screen>
             </>
           ) : (
             <>
-              <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="Login">
+                {(props) => <LoginScreen {...props} onLogin={onLogin} />}
+              </Stack.Screen>
               <Stack.Screen name="Register" component={RegisterScreen} />
             </>
           )}
