@@ -33,7 +33,7 @@ export default ({ navigation, onLogin }: any) => {
             <CustomImput
               style={styles.textInput}
               label="Email"
-              testID="emailInput"
+              testID="signIn_email_input"
               value={email}
               setValue={setEmail}
               backgroundColor={lightColor}
@@ -42,7 +42,7 @@ export default ({ navigation, onLogin }: any) => {
             <CustomImput
               style={styles.textInput}
               label={"Password"}
-              testID="passwordInput"
+              testID="signIn_password_input"
               isPassword={true}
               underlineColor="transparent"
               value={password}

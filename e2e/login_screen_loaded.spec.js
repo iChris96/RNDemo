@@ -1,19 +1,21 @@
 const { reloadApp } = require("detox-expo-helpers");
 
-describe("Writting a email and password", () => {
+describe("Writting the signIn form", () => {
   beforeAll(async () => {
     await reloadApp();
   });
 
-  it("should write a email and password", async () => {
-    await element(by.id("emailInput")).tap();
-    await element(by.id("emailInput")).typeText("chris@gmail.com");
-    await expect(element(by.id("emailInput"))).toHaveText("chris@gmail.com");
+  it("should write a email", async () => {
+    await element(by.id("signIn_email_input")).tap();
+    await element(by.id("signIn_email_input")).typeText("chris@gmail.com");
+    await expect(element(by.id("signIn_email_input"))).toHaveText(
+      "chris@gmail.com"
+    );
   });
 
   it("should write a password", async () => {
-    await element(by.id("passwordInput")).tap();
-    await element(by.id("passwordInput")).typeText("abc123");
-    await expect(element(by.id("passwordInput"))).toHaveText("abc123");
+    await element(by.id("signIn_password_input")).tap();
+    await element(by.id("signIn_password_input")).typeText("abc123");
+    await expect(element(by.id("signIn_password_input"))).toHaveText("abc123");
   });
 });

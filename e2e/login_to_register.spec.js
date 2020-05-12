@@ -1,6 +1,6 @@
 const { reloadApp } = require("detox-expo-helpers");
 
-describe("Writting the register form", () => {
+describe("Writting the signUp form", () => {
   beforeAll(async () => {
     await reloadApp();
   });
@@ -9,18 +9,23 @@ describe("Writting the register form", () => {
     await element(by.id("goToRegister")).tap();
   });
 
-  it("should fill the register data", async () => {
+  it("should write a email", async () => {
     await element(by.id("signUp_email_input")).tap();
     await element(by.id("signUp_email_input")).typeText("chris@gmail.com");
-    await element(by.id("signUp_password_input")).tap();
-    await element(by.id("signUp_password_input")).typeText("abc123");
-    await element(by.id("signUp_repeat_password_input")).tap();
-    await element(by.id("signUp_repeat_password_input")).typeText("abc123");
-
     await expect(element(by.id("signUp_email_input"))).toHaveText(
       "chris@gmail.com"
     );
+  });
+
+  it("should write a password", async () => {
+    await element(by.id("signUp_password_input")).tap();
+    await element(by.id("signUp_password_input")).typeText("abc123");
     await expect(element(by.id("signUp_password_input"))).toHaveText("abc123");
+  });
+
+  it("should write a repeat password", async () => {
+    await element(by.id("signUp_repeat_password_input")).tap();
+    await element(by.id("signUp_repeat_password_input")).typeText("abc123");
     await expect(element(by.id("signUp_repeat_password_input"))).toHaveText(
       "abc123"
     );
