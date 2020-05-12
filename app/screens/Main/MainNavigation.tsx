@@ -1,10 +1,8 @@
 import * as React from "react";
-import { Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./Home";
 import SettingsScreen from "./Settings";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import Colors from "../../../assets/Colors/Colors";
 
 const Tab = createBottomTabNavigator();
@@ -24,7 +22,6 @@ export default function App({ onSignOut }: any) {
             iconName = focused ? "ios-list-box" : "ios-list";
           }
 
-          // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
