@@ -1,30 +1,4 @@
-import React, { Component } from "react";
-import { View, Text } from "react-native";
-import NewMessageForm from "./app/components/NewMessageForm";
-import MessageList from "./app/components/MessageList";
-
-interface MyState {
-  messages: Array<string>;
-}
-
-interface MyProps {}
-
-export default class App extends Component<MyProps, MyState> {
-  state = { messages: [] };
-  handleSend = (newMessage: string) => {
-    this.setState((state) => ({ messages: [newMessage, ...state.messages] }));
-  };
-  render() {
-    const { messages } = this.state;
-    return (
-      <View>
-        <NewMessageForm onSend={this.handleSend} />
-        <MessageList data={messages} />
-      </View>
-    );
-  }
-}
-/*import React, { useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
@@ -71,4 +45,3 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({});
-*/

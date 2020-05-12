@@ -9,6 +9,7 @@ export default (props: any) => {
       label={props.label}
       style={props.style}
       dense={true}
+      testID={props.testID}
       secureTextEntry={props.isPassword}
       theme={{
         colors: {

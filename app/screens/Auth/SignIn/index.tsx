@@ -10,6 +10,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import CustomImput from "../../../components/CustomImput";
 import { Button } from "react-native-paper";
 import Colors from "../../../../assets/Colors/Colors";
+import GlobalStyles from "../../../../assets/Styles/Styles";
 
 const lightColor = Colors.backGroundColors.lightColor;
 const darkColor = Colors.backGroundColors.darkColor;
@@ -31,6 +32,7 @@ export default ({ navigation }: any) => {
             <CustomImput
               style={styles.textInput}
               label="Email"
+              testID="emailInput"
               value={email}
               setValue={setEmail}
               backgroundColor={lightColor}
@@ -39,6 +41,7 @@ export default ({ navigation }: any) => {
             <CustomImput
               style={styles.textInput}
               label={"Password"}
+              testID="passwordInput"
               isPassword={true}
               underlineColor="transparent"
               value={password}
@@ -46,10 +49,22 @@ export default ({ navigation }: any) => {
               backgroundColor={lightColor}
             />
 
+            <Button
+              mode="contained"
+              onPress={() => console.log("Pressed")}
+              style={GlobalStyles.submitButton}
+              labelStyle={GlobalStyles.submitButtonLabel}
+              contentStyle={GlobalStyles.submitButtonContent}
+            >
+              SignIn!
+            </Button>
+
             <Text
+              testID="goToRegister"
               onPress={() => {
                 navigation.navigate("Register");
               }}
+              style={GlobalStyles.linkeable}
             >
               SignUp!
             </Text>

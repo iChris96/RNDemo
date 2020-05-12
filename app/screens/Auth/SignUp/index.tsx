@@ -29,6 +29,7 @@ export default ({ navigation }: any) => {
             <CustomImput
               style={styles.textInput}
               label="Email"
+              testID="signUp_email_input"
               value={email}
               setValue={setEmail}
               backgroundColor={lightColor}
@@ -37,6 +38,7 @@ export default ({ navigation }: any) => {
             <CustomImput
               style={styles.textInput}
               label={"Password"}
+              testID="signUp_password_input"
               isPassword={true}
               underlineColor="transparent"
               value={password}
@@ -48,6 +50,7 @@ export default ({ navigation }: any) => {
               style={styles.textInput}
               label={"Repeat Password"}
               isPassword={true}
+              testID="signUp_repeat_password_input"
               underlineColor="transparent"
               value={repeatPassword}
               setValue={setRepeatPassword}
